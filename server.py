@@ -5,10 +5,10 @@
 # turn debug mode on to automatically keep changes without restarting server - set FLASK_ENV=development
 # flask run
 
-
-# allows us to send HTML files
-from flask import Flask, render_template, url_for, request, redirect
 import csv
+from flask import Flask, render_template, url_for, request, redirect
+print('hello')
+# allows us to send HTML files
 
 app = Flask(__name__)
 print(__name__)
