@@ -7,7 +7,6 @@
 
 import csv
 from flask import Flask, render_template, url_for, request, redirect
-print('hello')
 # allows us to send HTML files
 
 app = Flask(__name__)
