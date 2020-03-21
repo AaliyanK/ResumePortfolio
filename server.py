@@ -2,6 +2,7 @@
 # SET ENTIRE FOLDER (with py/html/css) AS VIRTUAL NETWORK - python -m venv ResumeWebsite
 # scripts\activate
 # set FLASK_APP=server.py
+# turn debug mode on to automatically keep changes without restarting server - set FLASK_ENV=development
 # flask run
 
 
@@ -47,10 +48,13 @@ def write_to_csv(data):
 @app.route('/submit_form', methods=['POST', 'GET'])
 def submit_form():
     if request.method == 'POST':
-        data = request.form.to_dict()  # get email/name/subject as dictionary in terminal
-        # pass in the GET data to write_to_file where it will be put into database
-        write_to_csv(data)
-        return redirect('/thankyou.html')
+        try:
+            data = request.form.to_dict()  # get email/name/subject as dictionary in terminal
+            # pass in the GET data to write_to_file where it will be put into database
+            write_to_csv(data)
+            return redirect('/thankyou.html')
+        except:
+            return 'did not save to database'
     else:
         return 'error!'
 
