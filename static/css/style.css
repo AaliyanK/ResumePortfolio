@@ -90,6 +90,14 @@ address {
   font-style: normal;
   line-height: inherit; }
 
+.test {
+  width:300px;
+  
+  background-image: url(../static/images/test2.jpg);
+  background-size: contain;
+  background-position:center;
+}
+
 ol,
 ul,
 dl {
